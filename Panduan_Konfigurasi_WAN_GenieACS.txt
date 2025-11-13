@@ -1,0 +1,96 @@
+📘 PANDUAN KONFIGURASI WAN, SSID, DAN INTERFACE DI GENIEACS
+============================================================
+
+🌐 1. WAN Bridge Mode
+----------------------
+Jika menggunakan slot WAN PPP:
+- Connection Mode: PPPoE_Bridged
+- Service List: INTERNET atau OTHER
+
+Contoh untuk perangkat FiberHome:
+- PPPoE Mode: PPPoE_Routed
+- Service List: TR069, INTERNET
+- Bind Interface:
+  InternetGatewayDevice.LANDevice.1.LANEthernetInterfaceConfig.1,
+  InternetGatewayDevice.LANDevice.1.WLANConfiguration.1,
+  InternetGatewayDevice.LANDevice.1.WLANConfiguration.5
+
+Jika menggunakan slot WAN IP:
+- Connection Mode: IP_Bridged
+- Service List: INTERNET atau OTHER
+
+
+🚀 2. WAN Route / PPPoE
+-------------------------
+- Connection Mode: IP_Routed
+- Service List: INTERNET
+
+
+📡 3. SSID & Keamanan Jaringan
+-------------------------------
+SSID dengan Password:
+- Security Mode: 11i atau WPAand11i
+
+SSID tanpa Password:
+- Security Mode: None
+
+
+🔗 4. Bind / Tag LAN & WLAN Interface
+--------------------------------------
+Isi secara manual dengan parameter di bawah ini.
+Gunakan pemisah koma (,) jika lebih dari satu interface.
+
+Khusus ZTE F670L, tambahkan WAN Interface juga pada kolom "WAN Interface".
+
+
+🖧 WAN IP Interface
+--------------------
+WAN 1: InternetGatewayDevice.WANDevice.1.WANConnectionDevice.1.WANIPConnection.1
+WAN 2: InternetGatewayDevice.WANDevice.1.WANConnectionDevice.1.WANIPConnection.2
+WAN 3: InternetGatewayDevice.WANDevice.1.WANConnectionDevice.1.WANIPConnection.3
+WAN 4: InternetGatewayDevice.WANDevice.1.WANConnectionDevice.1.WANIPConnection.4
+
+
+🔐 WAN PPP Interface
+---------------------
+WAN 1: InternetGatewayDevice.WANDevice.1.WANConnectionDevice.1.WANPPPConnection.1
+WAN 2: InternetGatewayDevice.WANDevice.1.WANConnectionDevice.1.WANPPPConnection.2
+WAN 3: InternetGatewayDevice.WANDevice.1.WANConnectionDevice.1.WANPPPConnection.3
+WAN 4: InternetGatewayDevice.WANDevice.1.WANConnectionDevice.1.WANPPPConnection.4
+
+
+🌐 LAN Interface (Non–ZTE F670L)
+--------------------------------
+Gunakan hanya LAN/WLAN Interface pada konfigurasi WAN.
+
+LAN 1: InternetGatewayDevice.LANDevice.1.LANEthernetInterfaceConfig.1
+LAN 2: InternetGatewayDevice.LANDevice.1.LANEthernetInterfaceConfig.2
+LAN 3: InternetGatewayDevice.LANDevice.1.LANEthernetInterfaceConfig.3
+LAN 4: InternetGatewayDevice.LANDevice.1.LANEthernetInterfaceConfig.4
+
+
+📶 SSID Interface
+------------------
+SSID1: InternetGatewayDevice.LANDevice.1.WLANConfiguration.1
+SSID2: InternetGatewayDevice.LANDevice.1.WLANConfiguration.2
+SSID3: InternetGatewayDevice.LANDevice.1.WLANConfiguration.3
+SSID4: InternetGatewayDevice.LANDevice.1.WLANConfiguration.4
+SSID5: InternetGatewayDevice.LANDevice.1.WLANConfiguration.5
+SSID6: InternetGatewayDevice.LANDevice.1.WLANConfiguration.6
+SSID7: InternetGatewayDevice.LANDevice.1.WLANConfiguration.7
+SSID8: InternetGatewayDevice.LANDevice.1.WLANConfiguration.8
+
+
+🧩 Contoh Multiple Interface
+-----------------------------
+InternetGatewayDevice.LANDevice.1.LANEthernetInterfaceConfig.1,
+InternetGatewayDevice.LANDevice.1.LANEthernetInterfaceConfig.2,
+InternetGatewayDevice.LANDevice.1.LANEthernetInterfaceConfig.3,
+InternetGatewayDevice.LANDevice.1.LANEthernetInterfaceConfig.4,
+InternetGatewayDevice.LANDevice.1.WLANConfiguration.1,
+InternetGatewayDevice.LANDevice.1.WLANConfiguration.5
+
+
+📘 Catatan
+-----------
+Untuk perangkat dual-band, SSID 5GHz biasanya dimulai dari SSID 6 ke atas.
