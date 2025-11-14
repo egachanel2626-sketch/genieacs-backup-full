@@ -1,0 +1,8 @@
+1.wget https://raw.githubusercontent.com/egachanel2626-sketch/genieacs-backup-full/refs/heads/main/install-genieacs1.sh
+2.chmod +x install-genieacs1.sh
+3.bash install-genieacs1.sh
+
+
+
+
+
